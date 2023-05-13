@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Word Count</title>
+  
+</head>
+
+<style>
+  body{
+    background-color: aqua;
+  }
+  h1{
+    text-align: center;
+    color: blue;
+    font-size: 5rem;
+  }
+  form{
+    text-align: center;
+    font-size: 2rem;
+  }
+  .txtfield{
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  button{
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+</style>
+<body>
+  <h1>Frequency of Word</h1>
+  <form method="POST" action="{% url 'count' %}">
+    {% csrf_token %}
+    <label for="url">Enter an URL of static web page:</label>
+    <input class="txtfield" type="text" name="url" value="{{ url }}">
+    <button type="submit">Count Frequency</button>
+  </form>
+</body>
+</html>
